@@ -50,10 +50,28 @@
         <a title="Вверх" href="#" class="scon up" id="toTop"></a>
     </span>
     {% endif %}
+<script>
+$(document).ready(function(){
+
+	$(".wide").click(function(){	
+
+		if ( $(".chapter-text").hasClass("not-wide") ) {
+		
+			$(".chapter-text").addClass("now-wide").removeClass("not-wide"); return false;
+	
+		} else {
+		
+			$(".chapter-text").addClass("not-wide").removeClass("now-wide"); return false;
+			
+		}
+	});
+});
+</script>
+	<button class="btn btn-default btn-xs wide" style="margin-bottom: 1px;">Wide Mode</button>
 </div>
 
 {% if story.nsfw and not user.nsfw %}
-<div id="nsfwModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="nsfwModalLabel" aria-hidden="true">
+<div id="nsfwModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="nsfwModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="myModalLabel">Предупреждение</h3>
