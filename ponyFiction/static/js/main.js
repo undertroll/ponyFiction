@@ -36,7 +36,7 @@ var ajax = {
         event.preventDefault();
         $('.modal:hidden').remove(); // Fix fox clear DOM
         var url = '/ajax' + $(this).attr('href');
-        var modal = $('<div class="modal hide fade"></div>');
+        var modal = $('<div class="modal fade"></div>');
         modalDisplaying = true;
         $.ajax({
             dataType : 'html',
@@ -737,19 +737,21 @@ var stuff = {
     panel : function() {
         if(!$("#story_panel").length) return;
         positionY = $("#story_panel").position().top;
-        panelWidth = $("#story_panel").width();
+        panelWidth = $("#story-page-story").width() - 40;
         isFixed = false;
         $(window).bind('scroll', function () {
             if (this.pageYOffset > (positionY)) {
                 isFixed = true;
-                $("#story_panel").css('position', 'fixed').css('top', 0).css('z-index', 10).css('width', panelWidth).css('border-top-right-radius', 0).css('border-top-left-radius', 0);
+                $("#story_panel").css('position', 'fixed').css('top', 0).css('z-index', 10).css('width', panelWidth);
                 $("#wrapper").css('height', $("#story_panel").height() + 30);
             }
             if (this.pageYOffset <= positionY){
                 isFixed = false;
-                $("#story_panel").css('position', 'static').css('top', 0).css('z-index', 10).css('width', panelWidth).css('border-top-right-radius', 10).css('border-top-left-radius', 10);
+                $("#story_panel").css('position', 'static').css('top', 0).css('z-index', 10).css('width', panelWidth);
                 $("#wrapper").css('height', 0);
             }
+			panelWidth = $("#story-page-story").width() - 40;
+			$("#story_panel").css('width', panelWidth);
         });
     },
 
