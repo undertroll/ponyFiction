@@ -1,5 +1,5 @@
 /* ToDo отправить коммент - кнопка странная */
-/* Body, base and containers */
+/* Body and base */
 body {
 	background: #f6f6f6 url('../i/body-bg.png') repeat 0 0;
 }
@@ -13,13 +13,16 @@ body {
 }
 
 .row {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: initial;
+	padding-right: initial;
+	margin-right: 0px;
+	margin-left: 0px;
 }
 
 .well {
 	background-color: #ffffff;
 }
+
 /* Header */
 
 .page-header {
@@ -74,11 +77,24 @@ body {
 	width: 32px;
 	height: 32px;
 }
+
 a.slidesjs-navigation {
 	position: relative;
 	top: -37px;
 	left: 370px;
 	padding: 2px;
+}
+
+.nav-pills.nav-main a {
+	text-decoration: none;
+}
+
+.dropdown-menu > li > a {
+	color: #000000 !important;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+	color: #000000 !important;
 }
 
 /* Main menu */
@@ -435,6 +451,33 @@ label.gen input {
 /* Story page */
 .story-page {
 	margin-bottom: 60px;
+}
+
+.stories-chapters li a {
+	text-decoration: none;
+}
+
+.not-wide {
+	width: 70% !important;
+}
+
+.now-wide {
+	width: 100% !important;
+}
+
+.page-list-header {
+	font-size: 20px;
+	color: #008000;
+}
+
+.page-list-data {
+	font-size: 10px;
+	color: #808080;
+}
+
+.page-list-downloads {
+	color: #000000;
+	float: right;
 }
 
 .green,.complete {
@@ -833,9 +876,6 @@ input.hidden {
 	margin-bottom: 6px;
 }
 
-.collapse {
-	font-size: 12px;
-}
 .collapse-normal {
 	font-size: 14px!important;
 }
@@ -1447,40 +1487,6 @@ a.btn {
 
 /* New design */
 
-.row {
-	padding-left: initial;
-	padding-right: initial;
-	margin-right: 0px;
-	margin-left: 0px;
-}
-
-.stories-chapters li a {
-	text-decoration: none;
-}
-
-.not-wide {
-	width: 70%;
-}
-
-.now-wide {
-	width: 100%;
-}
-
-.page-list-header {
-	font-size: 20px;
-	color: #008000;
-}
-
-.page-list-data {
-	font-size: 10px;
-	color: #808080;
-}
-
-.page-list-downloads {
-	color: #000000;
-	float: right;
-}
-
 .story-panel {
 	border-radius: 0px 0px 4px 4px;
 	border: 1px solid #ddd;
@@ -1585,20 +1591,6 @@ blockquote {
 	font-size: 28px;
 	padding-right: 10px;
 	cursor: pointer;
-}
-
-/* Header */
-
-.nav-pills.nav-main a {
-	text-decoration: none;
-}
-
-.dropdown-menu > li > a {
-	color: #000000 !important;
-}
-
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-	color: #000000 !important;
 }
 
 /* Search */
