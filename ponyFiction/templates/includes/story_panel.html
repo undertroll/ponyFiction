@@ -42,6 +42,17 @@
             <option value="2">Маленький</option>
             <option value="3">Большой</option>
         </select>
+        <select class="select-family" disabled>
+			<option value="0">Стандарт</option>
+            <option value="1">Times New Roman</option>
+			<option value="2">Georgia</option>
+			<option value="3">Arial</option>
+            <option value="4">Consolas</option>
+            <option value="5">Open Sans</option>
+			<option value="6">Courier New</option>
+			<option value="7">Verdana</option>
+			<option value="8">Calibri</option>
+        </select>
     </span>
     <span class="chapter-controls">
     {% comment %}
@@ -52,17 +63,11 @@
     {% endif %}
 <script>
 $(document).ready(function(){
-
 	$(".wide").click(function(){	
-
-		if ( $(".chapter-text").hasClass("not-wide") ) {
-		
+		if ( $(".chapter-text").hasClass("not-wide") ) {	
 			$(".chapter-text").addClass("now-wide").removeClass("not-wide"); return false;
-	
-		} else {
-		
-			$(".chapter-text").addClass("not-wide").removeClass("now-wide"); return false;
-			
+		} else {	
+			$(".chapter-text").addClass("not-wide").removeClass("now-wide"); return false;		
 		}
 	});
 });
