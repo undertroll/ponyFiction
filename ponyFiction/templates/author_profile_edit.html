@@ -10,12 +10,22 @@
         </ul>
     </div>
 
-    <div class="col-md-12">
-                    <h1>{{ page_title }}</h1>
+<div class="col-md-12">
+<h1>{{ page_title }}</h1>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="main-head">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#main" aria-expanded="true" aria-controls="main">
+          Основное
+        </a>
+      </h4>
+    </div>
+    <div id="main" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main">
+      <div class="panel-body">
                     <form id="main" action="#main" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {% csrf_token %}
                         <fieldset>
-                            <legend>Основное</legend>
                             {% if profile_ok %}<div class="alert-mini green">Профиль успешно обновлен</div>{% endif %}
                             {% for field in profile_form %}
                                 <div class="control-group{% if field.errors %} error{% endif %}">
@@ -39,12 +49,23 @@
                                 <button class="btn btn-primary" type="submit" name="save_profile">Сохранить профиль</button>
                             </div><br>
                         </fieldset>
-                    </form>
-
+                    </form>        
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="mail-head">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#mail" aria-expanded="false" aria-controls="mail">
+          Почта
+        </a>
+      </h4>
+    </div>
+    <div id="mail" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mail">
+      <div class="panel-body">
                     <form id="mail" action="#mail" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {% csrf_token %}
                         <fieldset>
-                        <legend>Почта</legend>
                           {% if email_ok %}<div class="alert-mini green">Адрес электронной почты успешно обновлен</div>{% endif %}
                             {% for field in email_form %}
                                 <div class="control-group{% if field.errors %} error{% endif %}">
@@ -68,12 +89,23 @@
                                 <button class="btn btn-primary" type="submit" name="save_email">Сменить e-mail</button>
                             </div><br>
                         </fieldset>
-                    </form>
-
+                    </form>        
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="security-head">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#security" aria-expanded="false" aria-controls="security">
+          Безопасность
+        </a>
+      </h4>
+    </div>
+    <div id="security" class="panel-collapse collapse" role="tabpanel" aria-labelledby="security">
+      <div class="panel-body">
                     <form id="security" action="#security" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {% csrf_token %}
                         <fieldset>
-                            <legend>Безопасность</legend>
                           {% if password_ok %}<div class="alert-mini green">Новый пароль установлен</div>{% endif %}
                             {% for field in password_form %}
                                 <div class="control-group{% if field.errors %} error{% endif %}">
@@ -101,12 +133,23 @@
                                 <button class="btn btn-primary" type="submit" name="save_password">Сменить пароль</button>
                             </div><br>
                         </fieldset>
-                    </form>
-
+                    </form>       
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="filters-head">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#filters" aria-expanded="false" aria-controls="filters">
+          Настройки отображения
+        </a>
+      </h4>
+    </div>
+    <div id="filters" class="panel-collapse collapse" role="tabpanel" aria-labelledby="filters">
+      <div class="panel-body">
                     <form id="personal" action="#personal" method="POST" enctype="multipart/form-data" class="form-horizontal">
                         {% csrf_token %}
                         <fieldset>
-                            <legend>Настройки отображения</legend>
                           {% if prefs_ok %}<div class="alert-mini green">Личные настройки сохранены</div>{% endif %}
                             <div class="padded bootstrap checkbox">
                                 <label>Скрыть жанры:</label><br>
@@ -125,7 +168,37 @@
                             </div>
                         </fieldset>
                     </form>
+      </div>
     </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="theme-head">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#theme" aria-expanded="false" aria-controls="theme">
+          Оформление сайта
+        </a>
+      </h4>
+    </div>
+    <div id="theme" class="panel-collapse collapse" role="tabpanel" aria-labelledby="theme">
+      <div class="panel-body">
+                    <form id="personal" action="#personal" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                        {% csrf_token %}
+                        <fieldset>
+                          {% if prefs_ok %}<div class="alert-mini green">Личные настройки сохранены</div>{% endif %}
+                            <select class="form-control" disabled>
+								<option>Everypony</option>
+								<option>Ночная</option>
+							</select><br>
+                            <div class="form-actions">
+                                <input class="btn btn-primary" type="submit" name="save_prefs" value="Сохранить личные настройки" disabled />
+                            </div>
+                        </fieldset>
+                    </form>
+      </div>
+    </div>
+  </div>
+</div>	
+</div>
 
     <div class="col-md-12">
         <ul class="breadcrumb">
