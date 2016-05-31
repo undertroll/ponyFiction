@@ -422,6 +422,7 @@ var listeners = {
         style : function() {
             var font_selector = $('.select-font');
             var size_selector = $('.select-size');
+			var faimly_selector = $('.select-family');
             var chapter_text = $('.chapter-text');
             font_selector.change(function() {
                 if (font_selector.val() == '1')
@@ -438,6 +439,24 @@ var listeners = {
                     chapter_text.removeClass('big-font').addClass('small-font');
                 else if (size_selector.val() == '3')
                     chapter_text.removeClass('small-font').addClass('big-font');
+            });
+            faimly_selector.change(function() {
+                if (faimly_selector.val() == '1')
+                    chapter_text.removeClass('text-arial text-georgia text-consolas text-opensans text-couriernew text-verdana text-calibri').addClass('text-tnr');
+                else if (faimly_selector.val() == '2')
+                    chapter_text.removeClass('text-arial text-tnr text-consolas text-opensans text-couriernew text-verdana text-calibri').addClass('text-georgia');
+                else if (faimly_selector.val() == '3')
+                    chapter_text.removeClass('text-tnr text-georgia text-consolas text-opensans text-couriernew text-verdana text-calibri').addClass('text-arial');
+                else if (faimly_selector.val() == '4')
+                    chapter_text.removeClass('text-arial text-georgia text-tnr text-opensans text-couriernew text-verdana text-calibri').addClass('text-consolas');
+                else if (faimly_selector.val() == '5')
+                    chapter_text.removeClass('text-arial text-georgia text-consolas text-tnr text-couriernew text-verdana text-calibri').addClass('text-opensans');
+                else if (faimly_selector.val() == '6')
+                    chapter_text.removeClass('text-arial text-georgia text-consolas text-tnr text-verdana text-calibri').addClass('text-couriernew');
+                else if (faimly_selector.val() == '7')
+                    chapter_text.removeClass('text-arial text-georgia text-consolas text-tnr text-couriernew text-calibri').addClass('text-verdana');
+                else if (faimly_selector.val() == '8')
+                    chapter_text.removeClass('text-arial text-georgia text-consolas text-tnr text-couriernew text-verdana').addClass('text-calibri');
             });
         },
         // Голосование
@@ -531,7 +550,7 @@ var listeners = {
                 $('button').removeClass('active');
                 $('img').removeClass('ui-selected');
                 document.getElementById('appendedInputButtons').setAttribute('value', '');
-                $('.span8').slideUp();
+                $('.col-md-8').slideUp();
             });
         }
     }
@@ -885,3 +904,15 @@ $(function(){
     }
 });
 $(function() {$("#toTop").scrollToTop();});
+
+// Скроллинг до активного элемента настроек
+$(function () {
+    $('#accordion').on('shown.bs.collapse', function (e) {
+        var offset = $('.panel.panel-default > .panel-collapse.in').offset();
+        if(offset) {
+            $('html,body').animate({
+                scrollTop: $('.panel-title a').offset().top -20
+            }, 500); 
+        }
+    }); 
+});
