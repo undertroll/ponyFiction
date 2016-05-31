@@ -61,10 +61,14 @@
 			<h3>Здесь пока ничего нет</h3>
 			</div>
 			<div role="tabpanel" class="tab-pane profile-tab fade" id="comments">
+			{% if comments_count > 0 %}
             <div id="comments-list">
             {% include "includes/brief_comments.html" %}
             </div>
             {% include "includes/comments_pagination_author_overview.html" %}
+			{% else %}
+			<h3>Здесь пока ничего нет</h3>
+			{% endif %}
 			</div>
 		</div>
 	</div>
