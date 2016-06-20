@@ -7,7 +7,7 @@ from django.template.defaultfilters import striptags
 
 
 class CommentForm(ModelForm):
-    attrs_dict = {'class': 'col-md-4 form-control'}
+    attrs_dict = {'class': 'col-md-4'}
     text = CharField(
         widget=Textarea(attrs=dict(attrs_dict, maxlength=8192, placeholder='Текст нового комментария')),
         max_length=8192,

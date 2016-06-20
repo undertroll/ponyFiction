@@ -14,16 +14,16 @@ class StoryForm(ModelForm):
     }
 
     radio_attrs = {
-       'btn_attrs': {'type': 'button', 'class': 'btn btn-default'},
+       'btn_attrs': {'type': 'button', 'class': 'btn'},
        'data_attrs': {'class': 'hidden'},
-       'btn_container_attrs': {'class': 'btn-group buttons-visible', 'role': 'group', 'data-toggle': 'buttons-radio'},
+       'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-radio'},
        'data_container_attrs': {'class': 'buttons-data'},
     }
 
     checkbox_attrs = {
-       'btn_attrs': {'type': 'button', 'class': 'btn btn-default'},
+       'btn_attrs': {'type': 'button', 'class': 'btn'},
        'data_attrs': {'class': 'hidden'},
-       'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-checkbox', 'role': 'group'},
+       'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-checkbox'},
        'data_container_attrs': {'class': 'buttons-data'},
     }
 

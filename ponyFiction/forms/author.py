@@ -63,15 +63,15 @@ class AuthorEditProfileForm(ModelForm):
 
 class AuthorEditPrefsForm(Form):
     checkbox_attrs = {
-        'btn_attrs': {'type': 'button', 'class': 'btn btn-default'},
+        'btn_attrs': {'type': 'button', 'class': 'btn'},
         'data_attrs': {'class': 'hidden'},
-        'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-checkbox', 'role': 'group'},
+        'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-checkbox'},
         'data_container_attrs': {'class': 'buttons-data'},
     }
     radio_attrs = {
-        'btn_attrs': {'type': 'button', 'class': 'btn btn-default'},
+        'btn_attrs': {'type': 'button', 'class': 'btn'},
         'data_attrs': {'class': 'hidden'},
-        'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-radio', 'role': 'group'},
+        'btn_container_attrs': {'class': 'btn-group buttons-visible', 'data-toggle': 'buttons-radio'},
         'data_container_attrs': {'class': 'buttons-data'},
     }
     excluded_categories = ModelMultipleChoiceField(
