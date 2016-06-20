@@ -1297,6 +1297,7 @@ a.btn {
     margin: 6px 0 0 12px;
     position: relative;
     right: 15px;
+    z-index: 1;
 }
 
 /* === Adaptive overrides === */
@@ -1681,4 +1682,8 @@ blockquote {
 	width: 16px;
 	height: 16px;
 	text-decoration: none;
+}
+
+#appendedInputButtons {
+	z-index: 2;
 }
